@@ -289,6 +289,77 @@ print("Data:", data)  # Data: None
 
 ## 5. How do you perform basic arithmetic operations in Python?
 
+Python supports a variety of arithmetic operations that can be performed using standard operators. Here are the basic arithmetic operations you can perform in Python:
+
+### Basic Arithmetic Operators
+
+1. **Addition (`+`)**: Adds two numbers.
+    ```python
+    result = 5 + 3  # result is 8
+    ```
+
+2. **Subtraction (`-`)**: Subtracts the second number from the first number.
+    ```python
+    result = 5 - 3  # result is 2
+    ```
+
+3. **Multiplication (`*`)**: Multiplies two numbers.
+    ```python
+    result = 5 * 3  # result is 15
+    ```
+
+4. **Division (`/`)**: Divides the first number by the second number and returns a float.
+    ```python
+    result = 5 / 3  # result is 1.6666666666666667
+    ```
+
+5. **Floor Division (`//`)**: Divides the first number by the second number and returns the integer part of the quotient.
+    ```python
+    result = 5 // 3  # result is 1
+    ```
+
+6. **Modulus (`%`)**: Returns the remainder when the first number is divided by the second number.
+    ```python
+    result = 5 % 3  # result is 2
+    ```
+
+7. **Exponentiation (`**`)**: Raises the first number to the power of the second number.
+    ```python
+    result = 5 ** 3  # result is 125
+    ```
+
+### Example Code:
+
+```python
+# Addition
+addition = 5 + 3
+print("5 + 3 =", addition)  # 5 + 3 = 8
+
+# Subtraction
+subtraction = 5 - 3
+print("5 - 3 =", subtraction)  # 5 - 3 = 2
+
+# Multiplication
+multiplication = 5 * 3
+print("5 * 3 =", multiplication)  # 5 * 3 = 15
+
+# Division
+division = 5 / 3
+print("5 / 3 =", division)  # 5 / 3 = 1.6666666666666667
+
+# Floor Division
+floor_division = 5 // 3
+print("5 // 3 =", floor_division)  # 5 // 3 = 1
+
+# Modulus
+modulus = 5 % 3
+print("5 % 3 =", modulus)  # 5 % 3 = 2
+
+# Exponentiation
+exponentiation = 5 ** 3
+print("5 ** 3 =", exponentiation)  # 5 ** 3 = 125
+```
+
 ## 6. What is the difference between `print()` and `input()` functions?
 
 ## 7. How do you create a list in Python?
