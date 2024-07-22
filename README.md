@@ -10,6 +10,7 @@
 7. How do you create a list in Python?
 8. How do you access elements from a list?
 9. What are tuples and how are they different from lists?
+
 10. How do you create a dictionary in Python?
 11. How do you access values from a dictionary?
 12. What are the conditional statements in Python?
@@ -20,6 +21,7 @@
 17. How do you define a function in Python?
 18. What are default arguments in Python functions?
 19. How do you return values from a function?
+
 20. What is the difference between local and global variables?
 21. How do you import a module in Python?
 22. What are strings and how do you manipulate them?
