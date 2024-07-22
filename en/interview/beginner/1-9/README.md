@@ -471,6 +471,196 @@ with open('output.txt', 'w') as file:
 
 ## 7. How do you create a list in Python?
 
+In Python, you can create a list by enclosing a sequence of elements within square brackets `[]`, separated by commas.
+Here are a few examples:
+
+### Creating an empty list
+
+```python
+my_list = []
+```
+
+### Creating a list with elements
+
+```python
+my_list = [1, 2, 3, 4, 5]
+```
+
+### Creating a list with mixed data types
+
+```python
+my_list = [1, "hello", 3.14, True]
+```
+
+### Creating a list using a list comprehension
+
+```python
+my_list = [x for x in range(10)]
+```
+
+### Creating a nested list (list of lists)
+
+```python
+my_list = [[1, 2], [3, 4], [5, 6]]
+```
+
+Lists in Python are versatile and can hold elements of different types, including other lists. You can manipulate lists
+using various list methods such as `append()`, `extend()`, `insert()`, `remove()`, `pop()`, and more.
+
 ## 8. How do you access elements from a list?
+
+To access elements from a list in Python, you use the index of the element you want to access. The index of the first
+element is 0, the second element is 1, and so on. Here are some examples:
+
+### Accessing Single Elements
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+# Access the first element
+print(fruits[0])  # Output: apple
+
+# Access the second element
+print(fruits[1])  # Output: banana
+
+# Access the third element
+print(fruits[2])  # Output: cherry
+```
+
+### Accessing Elements from the End of the List
+
+You can also use negative indexing to access elements from the end of the list. The index of the last element is -1, the
+second-to-last element is -2, and so on:
+
+```python
+# Access the last element
+print(fruits[-1])  # Output: cherry
+
+# Access the second-to-last element
+print(fruits[-2])  # Output: banana
+
+# Access the third-to-last element
+print(fruits[-3])  # Output: apple
+```
+
+### Slicing Lists
+
+You can access a range of elements from a list using slicing. The syntax is `list[start:end]`, where `start` is the
+index of
+the first element you want to INCLUDE, and `end` is the index of the first element you want to EXCLUDE.
+
+```python
+# Access the first two elements
+print(fruits[0:2])  # Output: ['apple', 'banana']
+
+# Access elements from the second to the end
+print(fruits[1:])  # Output: ['banana', 'cherry']
+
+# Access all elements
+print(fruits[:])  # Output: ['apple', 'banana', 'cherry']
+```
+
+### Accessing Elements in a Loop
+
+You can also access elements in a loop:
+
+```python
+for fruit in fruits:
+    print(fruit)
+
+# This will output each element in the list:
+# apple
+# banana
+# cherry
+```
+
+These are the basic ways to access elements in a list in Python. There are other techniques and let's divide them in *
+*intermediate** and **advanced** techniques.
+
+### Intermediate
+
+### List comprehension
+List comprehension provides a concise way to create lists and can be used to access and manipulate elements.
+```python
+# Create a new list with lengths of each fruit name
+lengths = [len(fruit) for fruit in fruits]
+print(lengths) # Output: [5, 6, 6]
+```
+
+### Using the `enumerate` function
+
+The `enumerate` function can be used to access both the index and the value of each element in a list.
+```python
+for index, fruit in enumerate(fruits):
+    print(f"Index: {index}, Fruit: {fruit}")
+```
+
+### Advanced
+
+### Using the `zip` function
+
+The `zip` function can be used to iterate over multiple lists in parallel.
+```python
+fruits = ["apple", "banana", "cherry"]
+colors = ["red", "yellow", "red"]
+
+for fruit, color in zip(fruits, colors):
+    print(f"The color of {fruit} is {color}")
+```
+
+### Using the `map` function
+
+The `map` function applies a given function to all items in an input list.
+```python
+# Convert all fruit names to uppercase
+uppercase_fruits = list(map(str.upper, fruits))
+print(uppercase_fruits)  # Output: ["APPLE", "BANANA", "CHERRY"]
+```
+
+### Using the `filter` function
+
+The `filter` function creates a list of elements for which a function return true.
+```python
+# Filter out fruits with names longer than 5 characters
+long_fruits = list(filter(lambda x: len(x) > 5, fruits))
+print(long_fruits)  # Output: ['banana', 'cherry']
+```
+
+### Using the `reduce` function
+The `reduce` function from the `functools` module applies a rolling computation to sequential pairs of values in a list.
+```python
+from functools import reduce
+
+# Concatenate all fruit names into a single string
+all_fruits = reduce(lambda x, y: x + y, fruits)
+print(all_fruits) # Output: "applebananacherry"
+```
+
+### List slicing with steps
+You can access elements at a specific intervals using slicing with step.
+```python
+# Access every second element
+print(fruits[::2])  # Output: ['apple', 'cherry']
+
+# Access the list in revers
+print(fruits[::-1])  # Output: ['cherry', 'banana', 'apple']
+```
+
+### Nested list comprehension
+For more complex list manipulations, nested list comprehensions can be used.
+```python
+# Create a 2D list (matrix) and flatten it
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for row in matrix for num in row]
+print(flattened)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+### Access list in multidimensional lists
+For multidimensional lists, you can use multiple indices to access elements.
+```python
+# Access elements in a 2D list (matrix)
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(matrix[1][6])  # Output: 6
+```
 
 ## 9. What are tuples and how are they different from lists?
