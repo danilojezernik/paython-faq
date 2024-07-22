@@ -580,16 +580,19 @@ These are the basic ways to access elements in a list in Python. There are other
 ### Intermediate
 
 ### List comprehension
+
 List comprehension provides a concise way to create lists and can be used to access and manipulate elements.
+
 ```python
 # Create a new list with lengths of each fruit name
 lengths = [len(fruit) for fruit in fruits]
-print(lengths) # Output: [5, 6, 6]
+print(lengths)  # Output: [5, 6, 6]
 ```
 
 ### Using the `enumerate` function
 
 The `enumerate` function can be used to access both the index and the value of each element in a list.
+
 ```python
 for index, fruit in enumerate(fruits):
     print(f"Index: {index}, Fruit: {fruit}")
@@ -600,6 +603,7 @@ for index, fruit in enumerate(fruits):
 ### Using the `zip` function
 
 The `zip` function can be used to iterate over multiple lists in parallel.
+
 ```python
 fruits = ["apple", "banana", "cherry"]
 colors = ["red", "yellow", "red"]
@@ -611,6 +615,7 @@ for fruit, color in zip(fruits, colors):
 ### Using the `map` function
 
 The `map` function applies a given function to all items in an input list.
+
 ```python
 # Convert all fruit names to uppercase
 uppercase_fruits = list(map(str.upper, fruits))
@@ -620,6 +625,7 @@ print(uppercase_fruits)  # Output: ["APPLE", "BANANA", "CHERRY"]
 ### Using the `filter` function
 
 The `filter` function creates a list of elements for which a function return true.
+
 ```python
 # Filter out fruits with names longer than 5 characters
 long_fruits = list(filter(lambda x: len(x) > 5, fruits))
@@ -627,17 +633,21 @@ print(long_fruits)  # Output: ['banana', 'cherry']
 ```
 
 ### Using the `reduce` function
+
 The `reduce` function from the `functools` module applies a rolling computation to sequential pairs of values in a list.
+
 ```python
 from functools import reduce
 
 # Concatenate all fruit names into a single string
 all_fruits = reduce(lambda x, y: x + y, fruits)
-print(all_fruits) # Output: "applebananacherry"
+print(all_fruits)  # Output: "applebananacherry"
 ```
 
 ### List slicing with steps
+
 You can access elements at a specific intervals using slicing with step.
+
 ```python
 # Access every second element
 print(fruits[::2])  # Output: ['apple', 'cherry']
@@ -647,7 +657,9 @@ print(fruits[::-1])  # Output: ['cherry', 'banana', 'apple']
 ```
 
 ### Nested list comprehension
+
 For more complex list manipulations, nested list comprehensions can be used.
+
 ```python
 # Create a 2D list (matrix) and flatten it
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -656,7 +668,9 @@ print(flattened)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 ### Access list in multidimensional lists
+
 For multidimensional lists, you can use multiple indices to access elements.
+
 ```python
 # Access elements in a 2D list (matrix)
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -664,3 +678,78 @@ print(matrix[1][6])  # Output: 6
 ```
 
 ## 9. What are tuples and how are they different from lists?
+
+Tuples are a data structure in Python that are similar to lists but have some key differences. Here are the main
+characteristics and differences between tuples and lists:
+
+### Tuples
+
+- **Immutable**: Once a tuple is created, its elements cannot be changed, added, or removed. This immutability makes
+  tuples
+  useful for representing fixed collections of items.
+- **Ordered**: Tuples maintain the order of elements. The elements can be accessed by their indices.
+- **Defined using parentheses**: Tuples are created by placing elements inside parentheses `()`, separated by commas.
+- **Can contain mixed data types**: Like lists, tuples can contain elements of different data types (e.g., integers,
+  strings, floats).
+
+### Lists
+
+- **Mutable**: Lists are mutable, meaning their elements can be changed, and you can add or remove elements after the
+  list is created.
+- **Ordered**: Lists maintain the order of the elements, and elements can be accessed by their indices.
+- **Defined using square brackets**: Lists are created by placing elements inside square brackets `[]`, separated by
+  commas.
+- **Can obtain mixed data types**: Lists can also contain mixed data types.
+
+### Example of Tuples and Lists
+
+#### Lists
+
+```python
+# Creating a tuple
+my_tuple = (1, 2, 3, "apple", "banana")
+
+# Accessing elements
+print(my_tuple[0])  # Output: 1
+print(my_tuple[3])  # Output: apple
+
+# Tuples are immutable so this would rase an error
+# my_tuple[1] = 4 # TypeError: 'tuple' object does not support item assignemnt
+```
+
+#### Lists
+
+```python
+# Creating a list
+my_list = [1, 2, 3, "apple", "banana"]
+
+# Accessing elements
+print(my_list[0])  # Output: 1
+print(my_list[3])  # Output: apple
+
+# Lists are mutable, so you can change elements
+my_list[1] = 4
+print(my_list)  # Output: [1, 4, 3, "apple", "banana"]
+
+# You can also add and remove elements from a list
+my_list.append("cherry")
+print(my_list)  # Output: [1, 4, 3, "apple", "banana", "charry"]
+
+my_list.remove("apple")
+print(my_list)  # Output: [1, 4, 3, "banana", "charry"]
+```
+
+### When to use `tuples` and when `lists`
+
+#### Tuples:
+
+- Use a tuple when you need a collection of items that should not change throughout the program. For example, use tuples
+  to represent fixed collection of data, such as coordinates (x, y), days of the week, or a collection of constants.
+- Tuples can be used as keys in dictionaries because they are immutable.
+
+#### Lists:
+
+- Use lists when you need a collection of items that may change, grow, or shrink over time. For example, use lists to
+  represent a collection of items that might be modified, such as a list of user inputs, a shopping cart, or a sequence
+  of tasks.
+- Lists are suitable for operations that involve frequent updates, such as adding or removing elements.
