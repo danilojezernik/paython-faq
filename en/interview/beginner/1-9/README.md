@@ -289,7 +289,8 @@ print("Data:", data)  # Data: None
 
 ## 5. How do you perform basic arithmetic operations in Python?
 
-Python supports a variety of arithmetic operations that can be performed using standard operators. Here are the basic arithmetic operations you can perform in Python:
+Python supports a variety of arithmetic operations that can be performed using standard operators. Here are the basic
+arithmetic operations you can perform in Python:
 
 ### Basic Arithmetic Operators
 
@@ -313,7 +314,8 @@ Python supports a variety of arithmetic operations that can be performed using s
     result = 5 / 3  # result is 1.6666666666666667
     ```
 
-5. **Floor Division (`//`)**: Divides the first number by the second number and returns the integer part of the quotient.
+5. **Floor Division (`//`)**: Divides the first number by the second number and returns the integer part of the
+   quotient.
     ```python
     result = 5 // 3  # result is 1
     ```
@@ -360,7 +362,112 @@ exponentiation = 5 ** 3
 print("5 ** 3 =", exponentiation)  # 5 ** 3 = 125
 ```
 
-## 6. What is the difference between `print()` and `input()` functions?
+## 6. What is the difference between `print()` and `input()` functions? What is `flush` and `file` in `print()` function?
+
+The `print()` and `input()` functions in Python are used for different purposes: `print()` is used to display output to
+the
+user, while `input()` is used to get input from the user.
+
+### `print()` Function
+
+**Purpose**: The `print()` function is used to display information to the console or terminal.
+
+**Syntax**: `print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)`
+
+**Parameters**:
+
+- `*objects`: The values to be printed. Multiple values can be separated by a comma.
+- `sep`: A string inserted between values. Default is a space.
+- `end`: A string appended after the last value. Default is a newline (\n).
+- `file`: An object with a write(string) method. Default is sys.stdout.
+- `flush`: Whether to forcibly flush the stream. Default is False.
+
+### `input()` Function
+
+**Purpose**: The `input()` function is used to get input from the user via the console or terminal.
+
+**Syntax**: `input(prompt=None)`
+
+**Parameters**:
+
+- prompt: A string, representing a message to display to the user before input. Default is `None`.
+
+**Returns**: A string representing the user's input.
+
+### Differences Between `print()` and `input()`
+
+**Functionality**:
+
+- `print()`: Displays information to the console.
+- `input()`: Reads information from the user.
+
+**Return Value**:
+
+- `print()`: Returns None.
+- `input()`: Returns the user's input as a string.
+
+**Use Case**:
+
+- `print()`: Used when you want to show output to the user.
+- `input()`: Used when you need to get input from the user.
+
+### Example Usage
+
+#### print():
+
+- `print("Hello, World!")` will display "Hello, World!" on the console.
+- `print("Age:", 25)` will display "Age: 25" on the console.
+
+#### input():
+
+- `name = input("Enter your name: ")` will prompt the user to enter their name.
+- `age = input("Enter your age: ")` will prompt the user to enter their age.
+
+### `flush` and `file` Parameter
+
+### `flush` Parameter
+
+- **Purpose**: Controls whether the output buffer is forcibly flushed (written to the terminal or file immediately).
+- **Syntax**: `print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)`
+- **Default Value**: `False`
+
+#### Example
+
+```python
+import time
+
+# Example with flush set to True. This will show immediately on the console
+for i in tange(5):
+    print(i, end=' ', flush=True)
+    time.sleep(1)
+```
+
+### `file` Parameter
+
+- **Purpose**: Specifies where the output should be written. Default is `sys.stdout` (the console).
+- **Syntax**: `print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)`
+- **Default Value**: `sys.stdout`
+
+#### Example
+
+```python
+# Writing to a file
+with open('output.txt', 'w') as file:
+    print("Hello, World!", file=file)
+```
+
+### Summary
+
+### `flush`:
+
+- Controls immediate flushing of output.
+- Useful for real-time logging and progress bars.
+
+### `file`:
+
+- Specifies the output destination.
+- Can be redirected to files or other streams like `sys.stderr` which is a built-in file object in Python that is used
+  by the interpreter to write error messages.
 
 ## 7. How do you create a list in Python?
 
