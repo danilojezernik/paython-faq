@@ -741,6 +741,7 @@ iteration is ignored, and the loop moves to the next iteration. This is useful f
 iterations within the loop.
 
 ### Example of continue in a for loop
+
 ```python
 for i in range(10):
     if i % 2 == 0:  # Skip even numbers
@@ -754,7 +755,9 @@ for i in range(10):
 # 7
 # 9
 ```
+
 ### Example of continue in a while loop
+
 ```python
 x = 0
 while x < 10:
@@ -762,7 +765,7 @@ while x < 10:
     if x % 2 == 0:  # Skip even numbers
         continue
     print(x)
-    
+
 # Output:
 # 1
 # 3
@@ -773,6 +776,129 @@ while x < 10:
 
 ## 17. How do you define a function in Python?
 
+In Python, you define a function using the `def` keyword, followed by the function name, parentheses `()`, and a
+colon `:`. The function body contains the code that executes when the function is called, and it is indented to indicate
+that it is part of the function. Here’s a detailed explanation of how to define and use functions in Python:
+
+### Basic Function Definition
+
+A basic function definition includes the def keyword, the function name, and the function body.
+
+```python
+def greet():
+    print("Hello World!")
+```
+
+### Calling a Function
+
+To execute the code inside a function, you call the function by its name followed by parentheses.
+
+```python
+greet()  # Output: Hello, world!
+```
+
+### Function with Parameters
+
+You can define a function that takes parameters, which allows you to pass values to the function.
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+
+greet("Alice")  # Output: Hello, Alice!
+```
+
+### Function with Default Parameters
+
+You can define default values for parameters. If the function is called without arguments, the default values are used.
+
+```python
+def greet(name="world"):
+    print(f"Hello, {name}!")
+
+
+greet()  # Output: Hello, world!
+greet("Alice")  # Output: Hello, Alice!
+```
+
+### Function with Variable-Length Arguments
+
+You can define functions that accept an arbitrary number of arguments using `*args` for positional arguments and **
+kwargs
+for keyword arguments.
+
+#### Positional Arguments
+
+```python
+def greet(*names):
+    for name in names:
+        print(f"Hello, {name}!")
+
+
+greet("Alice", "Bob", "Charlie")
+
+# Output:
+# Hello, Alice!
+# Hello, Bob!
+# Hello, Charlie!
+```
+
+#### Keyword Arguments
+
+```python
+def describe_person(**info):
+    for key, value in info.items():
+        print(f"{key}: {value}")
+
+
+describe_person(name="Alice", age=30, city="New York")
+
+# Output:
+# name: Alice
+# age: 30
+# city: New York
+```
+
+### Nested Functions
+
+You can define functions inside other functions.
+
+```python
+def outer_function(text):
+    def inner_function():
+        print(text)
+
+    inner_function()
+
+
+outer_function("Hello from outer function!")  # Output: Hello from outer function!
+```
+
+### Lambda Functions
+
+Python also supports anonymous functions, known as lambda functions, which are defined using the lambda keyword.
+
+```python
+add = lambda a, b: a + b
+print(add(3, 5))  # Output: 8
+```
+
+### Summary
+
+- **Basic Function**: Defined using `def`, followed by the function name and body.
+- **Parameters**: Functions can take parameters to accept input values.
+- **Return Value**: Functions can return values using the return statement.
+- **Default Parameters**: Functions can have default values for parameters.
+- **Variable-Length Arguments**: Use `*args` for positional and **kwargs for keyword arguments to accept arbitrary
+  numbers of arguments.
+- **Nested Functions**: Functions can be defined within other functions.
+- **Lambda Functions**: Anonymous functions defined using the lambda keyword.
+
 ## 18. What are default arguments in Python functions?
+
+In Python, default arguments are values that are provided in a function definition, which are used if no corresponding
+argument is passed during the function call. This allows functions to have flexible interfaces and provide default
+behavior for certain parameters.
 
 ## 19. How do you return values from a function?
