@@ -523,6 +523,7 @@ for i in range(10):
     if i % 2 == 0:
         continue
     print(i)
+
 # Output:
 # 1
 # 3
@@ -547,9 +548,228 @@ These features make `for` loops in Python powerful and flexible for various iter
 
 ## 14. How do you write a while loop in Python?
 
+In Python, a `while` loop repeatedly executes a block of code as long as a specified condition is true. Here’s a
+detailed
+explanation of how to write and use `while` loops:
+
+### Basic `while` Loop
+
+A basic `while` loop continues to run as long as the condition is true.
+
+```python
+x = 0
+while x < 5:
+    print(x)
+    x += 1
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+
+### Using `break` to Exit the Loop
+
+The `break` statement can be used to exit the loop prematurely when a certain condition is met.
+
+```python
+x = 0
+while x < 10:
+    if x == 5:
+        break
+    print(x)
+    x += 1
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+
+### Using `continue` to Skip an Iteration
+
+The `continue` statement skips the rest of the code inside the loop for the current iteration and moves to the next
+iteration.
+
+```python
+x = 0
+while x < 10:
+    x += 1
+    if x % 2 == 0:
+        continue
+    print(x)
+
+# Output:
+# 1
+# 3
+# 5
+# 7
+# 9
+```
+
+### Using `else` with `while` Loop
+
+An `else` block can be used with a `while` loop. The `else` block is executed when the condition becomes false, but not
+if the loop is terminated by a `break` statement.
+
+```python
+x = 0
+while x < 5:
+    print(x)
+    x += 1
+else:
+    print("Loop completed")
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+# Loop completed
+```
+
+### Infinite Loop
+
+A `while` loop can run indefinitely if the condition always remains true. Make sure to include a mechanism to break out
+of such loops to avoid infinite execution.
+
+```python
+x = 0
+while True:
+    print(x)
+    x += 1
+    if x == 10:
+        break
+
+# Output:
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+```
+
+### Nested `while` Loop
+
+You can nest `while` loops to handle more complex conditions.
+
+```python
+x = 0
+while x < 3:
+    y = 0
+    while y < 3:
+        print(f"x: {x}, y: {y}")
+        y += 1
+    x += 1
+
+# output:
+# x: 0, y: 0
+# x: 0, y: 1
+# x: 0, y: 2
+# x: 1, y: 0
+# x: 1, y: 1
+# x: 1, y: 2
+# x: 2, y: 0
+# x: 2, y: 1
+# x: 2, y: 2
+```
+
+### Summary
+
+- **Basic `while` Loop**: Repeats a block of code as long as the condition is true.
+- **Using `break`**: Exits the loop prematurely when a specific condition is met.
+- **Using `continue`**: Skips the rest of the code for the current iteration and moves to the next iteration.
+- **Using `else` with `while` Loop**: Executes after the loop condition becomes false, unless exited by `break`.
+- **Infinite Loop**: Runs indefinitely unless interrupted by a break statement or external intervention.
+- **Nested `while` Loop**: Handles more complex conditions by nesting loops.
+
 ## 15. What is the purpose of the `break` statement in loops?
 
+The `break` statement in Python is used to exit a loop prematurely. When a `break` statement is encountered inside a
+loop, the loop is immediately terminated, and the program control is transferred to the statement following the loop.
+This is useful for stopping the loop when a certain condition is met, regardless of whether the loop would normally
+terminate.
+
+### Example of break in a for loop
+
+```python
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+
+### Example of break in a while loop
+
+```python
+x = 0
+while x < 10:
+    if x == 5:
+        break
+    print(x)
+    x += 1
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+
 ## 16. What is the purpose of the `continue` statement in loops?
+
+The continue statement in Python is used to skip the rest of the code inside the current iteration of a loop and proceed
+to the next iteration. When a continue statement is encountered, the remaining code inside the loop for that particular
+iteration is ignored, and the loop moves to the next iteration. This is useful for skipping specific conditions or
+iterations within the loop.
+
+### Example of continue in a for loop
+```python
+for i in range(10):
+    if i % 2 == 0:  # Skip even numbers
+        continue
+    print(i)
+
+# Output:
+# 1
+# 3
+# 5
+# 7
+# 9
+```
+### Example of continue in a while loop
+```python
+x = 0
+while x < 10:
+    x += 1
+    if x % 2 == 0:  # Skip even numbers
+        continue
+    print(x)
+    
+# Output:
+# 1
+# 3
+# 5
+# 7
+# 9
+```
 
 ## 17. How do you define a function in Python?
 
