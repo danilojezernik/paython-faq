@@ -251,7 +251,9 @@ if x > 5:
 ```
 
 ### `elif` Statement
-The `elif` (short for "else if") statement allows you to check multiple conditions, executing the block of code inside it
+
+The `elif` (short for "else if") statement allows you to check multiple conditions, executing the block of code inside
+it
 if its condition is true and all preceding conditions are false.
 
 ```python
@@ -263,6 +265,7 @@ elif x > 5:
 ```
 
 ### `else` Statement
+
 The `else` statement is used to execute a block of code if all preceding conditions are false.
 
 ```python
@@ -274,7 +277,9 @@ elif x > 5:
 else:
     print("x is 5 or less")
 ```
+
 ### Nested Conditional Statements
+
 You can nest conditional statements inside other conditional statements.
 
 ```python
@@ -288,6 +293,7 @@ if x > 5:
 ```
 
 ### Conditional Expressions (Ternary Operator)
+
 Python also supports conditional expressions, which are a shorthand way of writing an `if-else` statement.
 
 ```python
@@ -297,6 +303,7 @@ print(result)  # Output: x is greater than 5
 ```
 
 ### Logical Operators in Conditional Statements
+
 You can use logical operators to combine multiple conditions:
 
 - **and**: True if both conditions are true.
@@ -318,6 +325,7 @@ if not x < 5:
 ```
 
 ### Summary
+
 - `if`: Executes a block of code if a condition is true.
 - `elif`: Checks another condition if all previous conditions are false.
 - `else`: Executes a block of code if all previous conditions are false.
@@ -329,7 +337,213 @@ These conditional statements and techniques allow you to control the flow of you
 
 ## 13. How do you write a for loop in Python?
 
+In Python, `for` loops are used to iterate over a sequence (such as a list, tuple, string, or range). Here’s a detailed
+explanation of how to write and use `for` loops:
 
+### Basic `for` Loop
+
+A basic for loop iterates over each item in a sequence and executes a block of code for each item.
+
+```python
+# Iterating over a list
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+
+# Output:
+# apple
+# banana
+# cherry
+```
+
+### Using `range()`
+
+The` range()` function generates a sequence of numbers, which is often used to control the number of times a loop runs.
+
+```python
+# Iterate over a range of values
+for i in range(5):
+    print(i)
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+
+#### Specifying Start, Stop, and Step in range()
+
+The `range()` function can take up to three arguments: start, stop, and step.
+
+```python
+# Specifying start, stop, and step in range()
+for i in range(2, 10, 2):
+    print(i)
+
+# Output:
+# 2
+# 4
+# 6
+# 8
+```
+
+### Iterating Over a String
+
+You can iterate over the characters of a string.
+
+```python
+# Iterating over a string
+for char in "hello":
+    print(char)
+
+# Output:
+# h
+# e
+# l
+# l
+# o
+```
+
+### Iterating Over a Dictionary
+
+You can iterate over the characters of a string.
+
+#### Iterating Over Keys
+
+```python
+my_dict = {"name": "Alice", "age": 25, "city": "New York"}
+for key in my_dict:
+    print(key)
+
+# Output:
+# name
+# age
+# city
+```
+
+#### Iterating Over Values
+
+```python
+for value in my_dict.values():
+    print(value)
+
+# Output:
+# Alice
+# 25
+# New York
+```
+
+#### Iterating Over Key-Value Pairs
+
+```python
+for key, value in my_dict.items():
+    print(f"{key}: {value}")
+
+# Output:
+# name: Alice
+# age: 25
+# city: New York
+```
+
+#### Nested for Loops
+
+You can nest for loops to iterate over multi-dimensional sequences.
+
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+for row in matrix:
+    for num in row:
+        print(num)
+
+# Output:
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+```
+
+### Using else with for Loops
+
+An `else` block can be used with a `for` loop. The `else` block executes after the loop completes normally, but not if
+the loop is terminated by a `break` statement.
+
+```python
+for i in range(5):
+    print(i)
+else:
+    print("Loop completed")
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+# Loop completed
+```
+
+### Breaking Out of a Loop
+
+You can use the `break` statement to exit a loop prematurely.
+
+```python
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+
+### Continuing to the Next Iteration
+
+You can use the `continue` statement to skip the rest of the code inside the loop for the current iteration and move to
+the next iteration.
+
+```python
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)
+# Output:
+# 1
+# 3
+# 5
+# 7
+# 9
+```
+
+### Summary
+
+- **Basic `for` Loop**: Iterates over each item in a sequence.
+- **Using `range()`**: Generates a sequence of numbers.
+- **Specifying Start, Stop, and Step in `range()`**: Controls the range of numbers iterated over.
+- **Iterating Over a String**: Iterates over characters in a string.
+- **Iterating Over a Dictionary**: Iterates over keys, values, or key-value pairs.
+- **Nested `for` Loops**: Iterates over multi-dimensional sequences.
+- **Using `else` with `for` Loops**: Executes after the loop completes normally.
+- **Breaking Out of a Loop**: Exits a loop prematurely with `break`.
+- **Continuing to the Next Iteration**: Skips the rest of the code for the current iteration with `continue`.
+
+These features make `for` loops in Python powerful and flexible for various iteration tasks.
 
 ## 14. How do you write a while loop in Python?
 
